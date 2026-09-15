@@ -1,4 +1,5 @@
-# Campus Event Management REST API
+#WEEK 1 TASK
+#Campus Event Management REST API
 
 A Flask backend for campus event creation, management, and student registrations. It uses SQLAlchemy, SQLite by default, and JWT bearer-token authentication.
 
