@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DeepSea Guardian | Ocean Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">◒</span><span>deepsea<br><b>guardian</b></span></a>
+      <nav aria-label="Primary navigation">
+        <button class="nav-item active" data-view="overview"><span>▦</span>Overview</button>
+        <button class="nav-item" data-view="live"><span>◉</span>Live monitoring</button>
+        <button class="nav-item" data-view="alerts"><span>△</span>Risk alerts <em>07</em></button>
+        <button class="nav-item" data-view="species"><span>◌</span>Marine species</button>
+        <button class="nav-item" data-view="reports"><span>▤</span>Reports</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="mission-card"><span class="pulse"></span><div><small>MISSION STATUS</small><strong>All systems operational</strong></div></div>
+        <button class="nav-item"><span>⚙</span>Settings</button>
+        <div class="profile"><div class="avatar">AK</div><div><strong>Aarav Kumar</strong><small>Ocean analyst</small></div><button>⌄</button></div>
+      </div>
+    </aside>
+
+    <section class="content">
+      <header>
+        <div><p class="eyebrow">FRIDAY, JULY 24 · 16:56 UTC</p><h1>Ocean intelligence <span>at a glance.</span></h1></div>
+        <div class="header-actions"><button class="icon-btn" aria-label="Notifications">♧<i></i></button><button class="export-btn" id="exportBtn">⇩ Export report</button></div>
+      </header>
+
+      <section class="hero" id="overview">
+        <div class="hero-copy"><p class="eyebrow aqua">GLOBAL DEEP-SEA NETWORK</p><h2>The ocean has a voice.<br><span>We help you hear it.</span></h2><p>DeepSea Guardian combines satellite imagery, autonomous vehicles and AI to protect the ecosystems beneath the surface.</p><button class="primary-btn" id="monitorBtn">Open live monitor <span>→</span></button></div>
+        <div class="ocean-orb" aria-hidden="true"><div class="orb-ring ring-a"></div><div class="orb-ring ring-b"></div><div class="orb-glow"></div><span class="orb-dot dot-a"></span><span class="orb-dot dot-b"></span><span class="orb-dot dot-c"></span><div class="orb-core">◒</div></div>
+        <div class="hero-stats"><div><strong>148</strong><small>ACTIVE SENSORS</small></div><div><strong>23</strong><small>DRONES DEPLOYED</small></div><div><strong>89%</strong><small>OCEAN COVERAGE</small></div></div>
+      </section>
+
+      <section class="metrics" aria-label="Key metrics">
+        <article><div class="metric-icon teal">⌁</div><div><small>WATER QUALITY INDEX</small><strong>82 <b>/ 100</b></strong><p class="up">↑ 4.2% <span>vs last week</span></p></div><div class="mini-chart bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+        <article><div class="metric-icon blue">◒</div><div><small>BIODIVERSITY SCORE</small><strong>76 <b>/ 100</b></strong><p class="up">↑ 2.8% <span>vs last week</span></p></div><div class="mini-chart line"><svg viewBox="0 0 110 45" preserveAspectRatio="none"><path d="M1 35 C20 32 18 20 34 25 S51 36 62 20 S77 25 87 12 S101 16 109 2"/></svg></div></article>
+        <article><div class="metric-icon coral">△</div><div><small>ACTIVE THREATS</small><strong>07 <b>detected</b></strong><p class="down">↓ 12% <span>vs last week</span></p></div><button class="small-link" data-view="alerts">View alerts →</button></article>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="panel map-panel"><div class="panel-head"><div><p class="eyebrow">LIVE RISK MAP</p><h3>Indian Ocean sector</h3></div><button class="ghost-btn" id="mapBtn">⌖  Explore map</button></div>
+          <div class="map"><div class="grid-lines"></div><span class="coord c1">12°S  72°E</span><span class="coord c2">08°S  79°E</span><span class="zone z1"></span><span class="zone z2"></span><span class="zone z3"></span><span class="beacon b1"><i></i></span><span class="beacon b2"><i></i></span><span class="beacon b3"><i></i></span><div class="map-legend"><span><i class="green"></i> Low</span><span><i class="amber"></i> Moderate</span><span><i class="red"></i> High risk</span></div><div class="map-label"><b>SECTOR 04</b><span>SW Indian Ridge</span></div></div>
+        </article>
+        <article class="panel alerts-panel"><div class="panel-head"><div><p class="eyebrow">PRIORITY QUEUE</p><h3>Recent detections</h3></div><button class="dots">•••</button></div><div class="alerts-list">
+          <button class="alert-row"><span class="risk high">!</span><div><strong>Illegal trawling activity</strong><small>Sector 04 · 8 min ago</small></div><b>HIGH</b></button>
+          <button class="alert-row"><span class="risk med">~</span><div><strong>Plastic accumulation</strong><small>Arabian Sea · 26 min ago</small></div><b>MED</b></button>
+          <button class="alert-row"><span class="risk low">◌</span><div><strong>Whale migration sighting</strong><small>Bay of Bengal · 1 hr ago</small></div><b>INFO</b></button>
+        </div><button class="all-alerts" data-view="alerts">View all alerts <span>→</span></button></article>
+      </section>
+
+      <section class="bottom-grid">
+        <article class="panel activity"><div class="panel-head"><div><p class="eyebrow">NETWORK ACTIVITY</p><h3>Signals received</h3></div><div class="period">7 days⌄</div></div><div class="activity-chart"><div class="chart-y"><span>1k</span><span>750</span><span>500</span><span>250</span><span>0</span></div><svg viewBox="0 0 600 180" preserveAspectRatio="none"><defs><linearGradient id="fill" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#36ddd0" stop-opacity=".35"/><stop offset="1" stop-color="#36ddd0" stop-opacity="0"/></linearGradient></defs><path class="area" d="M0 130 C30 110 42 119 65 98 S107 117 130 88 S175 108 198 72 S250 113 278 92 S323 55 350 75 S385 104 414 62 S455 49 480 82 S530 85 600 26 V180 H0Z"/><path class="chart-line" d="M0 130 C30 110 42 119 65 98 S107 117 130 88 S175 108 198 72 S250 113 278 92 S323 55 350 75 S385 104 414 62 S455 49 480 82 S530 85 600 26"/></svg><div class="chart-x"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span></div></div></article>
+        <article class="panel species-card"><div class="species-art"><div class="fish">◓</div><span>TRACKING<br>SPECIES</span></div><div class="species-content"><p class="eyebrow">FEATURED SPECIES</p><h3>Blue whale</h3><p>12 individuals tracked across the Bay of Bengal migration corridor.</p><button class="text-btn" data-view="species">View migration path →</button></div></article>
+      </section>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status"><span>✓</span><p id="toastText">Live monitoring view opened.</p></div>
+  <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>
